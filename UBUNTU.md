@@ -202,38 +202,7 @@ disabled = true
 
 ---
 
-## Phase 5: Runtimes & Dev Tools
-
-### Node.js (nvm + npm)
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-
-# Restart shell or source nvm
-source ~/.zshrc
-
-nvm install --lts
-nvm use --lts
-
-# tree-sitter-cli (required by Neovim kickstart, apt version is too old)
-npm install -g tree-sitter-cli
-```
-
-### Bun
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
-### Python (uv)
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
----
-
-## Phase 6: Neovim
+## Phase 5: Neovim
 
 ```bash
 # 1. Wipe any previous config
@@ -251,21 +220,30 @@ nvim
 
 ---
 
-## Phase 7: AI / Agentic Coding Tools
+## Phase 6: Globally installed CLI Apps
 
 ```bash
-# npm-based
-npm install -g @google/gemini-cli
-npm install -g @mariozechner/pi-coding-agent
+# Node.js (nvm)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+nvm use --lts
+npm install -g tree-sitter-cli
 
-# Shell install
+# Runtimes
+curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -fsSL https://bun.sh/install | bash
+
+# AI / Agentic Coding
 curl -fsSL https://claude.ai/install.sh | bash
 curl -fsSL https://opencode.ai/install | bash
+npm install -g @google/gemini-cli
+npm install -g @mariozechner/pi-coding-agent
 ```
 
 ---
 
-## Phase 8: tmux
+## Phase 7: tmux
 
 **tmux config file:** `~/.tmux.conf`
 
@@ -301,81 +279,6 @@ bind r source-file ~/.tmux.conf \; display "Config reloaded"
 
 ---
 
-## Maintenance
-
-### apt (Phase 1 system packages, Neovim PPA, Docker)
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### snap (VS Code)
-
-```bash
-sudo snap refresh code
-```
-
-### Docker
-
-```bash
-# Covered by apt upgrade, but to check the installed version:
-docker --version
-```
-
-### Homebrew (Phase 3 CLI tools)
-
-```bash
-brew update && brew upgrade
-
-# Cleanup old versions to free disk space
-brew cleanup
-```
-
-### nvm / Node.js
-
-```bash
-nvm install --lts --reinstall-packages-from=current
-```
-
-### npm globals
-
-```bash
-npm update -g
-```
-
-### Bun
-
-```bash
-bun upgrade
-```
-
-### uv
-
-```bash
-uv self update
-```
-
-### Claude Code
-
-```bash
-claude update
-```
-
-### OpenCode
-
-```bash
-curl -fsSL https://opencode.ai/install | bash
-```
-
-### Zsh plugins
-
-```bash
-cd ~/.zsh/plugins/zsh-autosuggestions && git pull
-cd ~/.zsh/plugins/zsh-syntax-highlighting && git pull
-```
-
----
-
 ## Daily Workflow
 
 * **Inside Neovim**: Neo-tree with `Space + e`, Telescope with `Space + sf`
@@ -385,4 +288,40 @@ cd ~/.zsh/plugins/zsh-syntax-highlighting && git pull
 * **System Monitor**: `btm` (Bottom) or `htop`
 * **Multiplexer**: `tmux` — persist sessions across SSH disconnects
 * **To Update Everything**: `brew upgrade`
+
+## Maintenance
+
+```bash
+# apt (system packages, Neovim PPA, Docker)
+sudo apt update && sudo apt upgrade -y
+
+# snap (VS Code)
+sudo snap refresh code
+
+# Homebrew (Phase 3 CLI tools)
+brew update && brew upgrade
+brew cleanup
+
+# nvm / Node.js
+nvm install --lts --reinstall-packages-from=current
+
+# npm globals
+npm update -g
+
+# Bun
+bun upgrade
+
+# uv
+uv self update
+
+# Claude Code
+claude update
+
+# OpenCode
+curl -fsSL https://opencode.ai/install | bash
+
+# Zsh plugins
+cd ~/.zsh/plugins/zsh-autosuggestions && git pull
+cd ~/.zsh/plugins/zsh-syntax-highlighting && git pull
+```
 

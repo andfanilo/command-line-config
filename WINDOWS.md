@@ -220,7 +220,22 @@ If Treesitter parsers fail to compile, force the compiler explicitly:
 
 ---
 
-## 📌 Phase 5: Daily Workflow
+## 📦 Phase 5: Globally installed CLI Apps
+
+```powershell
+# Runtimes
+irm https://astral.sh/uv/install.ps1 | iex
+irm bun.sh/install.ps1 | iex
+
+# AI / Agentic Coding
+irm https://claude.ai/install.ps1 | iex
+irm https://ampcode.com/install.ps1 | iex
+npm install -g @google/gemini-cli
+```
+
+---
+
+## 📌 Daily Workflow
 
 * **Inside Neovim**: Use Neo-tree (already in Kickstart) with Space + e.
 * **In Terminal**: Use fzf. Press Ctrl + T to find any file and hit Enter to open it.
@@ -232,73 +247,26 @@ If Treesitter parsers fail to compile, force the compiler explicitly:
 
 ## Maintenance
 
-### Scoop (all Phase 1 & 4 tools)
-
 ```powershell
-# Update Scoop itself + all installed packages
+# Scoop (all Phase 1 & 4 tools)
 scoop update *
-
-# Cleanup old versions to free disk space
 scoop cleanup *
-```
 
-### winget
-
-```powershell
+# Windows Terminal Preview
 winget upgrade Microsoft.WindowsTerminal.Preview
-```
 
-### uv
-
-```powershell
+# uv
 uv self update
-```
 
-### Bun
-
-```powershell
+# Bun
 bun upgrade
-```
 
-### Claude Code
-
-```powershell
+# Claude Code
 claude update
-```
 
-### Amp Code
-
-```powershell
+# Amp Code
 irm https://ampcode.com/install.ps1 | iex
-```
 
-### npm globals
-
-```powershell
+# npm globals
 npm update -g
-```
-
----
-
-# 📦 Globally installed CLI Apps
-
-## Powershell
-
-```powershell
-irm https://astral.sh/uv/install.ps1 | iex
-irm bun.sh/install.ps1 | iex
-
-irm https://claude.ai/install.ps1 | iex
-irm https://ampcode.com/install.ps1 | iex
-```
-
-## NodeJS / Bun
-
-```powershell
-npm install -g @google/gemini-cli
-```
-
-## UV
-
-```powershell
 ```
