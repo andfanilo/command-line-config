@@ -27,7 +27,7 @@ scoop install vcredist2022
 scoop install pwsh starship neovim fzf ripgrep fd zoxide eza
 
 # 4. CLI Apps
-scoop install 7zip bat bottom delta ffmpeg jq less PSFzf
+scoop install 7zip bat bottom delta dust ffmpeg jq less PSFzf
 scoop install caddy cloudflared duckdb gh hugo mkcert terraform tldr
 scoop install lazygit ttyd vhs yt-dlp
 

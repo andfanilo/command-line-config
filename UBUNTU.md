@@ -85,7 +85,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install starship fzf zoxide eza
 
 # 3. CLI Apps
-brew install bat bottom delta lazygit gh tldr
+brew install bat bottom delta dust lazygit gh tldr
 ```
 
 Wire `delta` to `git`:
